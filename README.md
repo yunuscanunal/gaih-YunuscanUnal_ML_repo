@@ -9,7 +9,7 @@
 **Note:** Your homeworks can be formats like ".ipynb" and ".py". **Not ".txt" files!!** Make sure that your codes works.  
 
 ## My Project
-This project is about learning and practicing in Machine Learning. This project done for being a Top Learner in Global AI Communit.
+This project is for learning and practicing about Machine Learning. This project done for being a one of Top Learner in Global AI Community.
 
 In this project, I used some python libraries...
 
