@@ -3,7 +3,7 @@
 
 **Course Date:** 19.04.2021 - 23.04.2021  
 **Name:** Yunuscan  
-**Surname:** Ünal	
+**Surname:** Ünal	  
 **Email:** yunuscanunal1@gmail.com  
 
 **Note:** Your homeworks can be formats like ".ipynb" and ".py". **Not ".txt" files!!** Make sure that your codes works.  
