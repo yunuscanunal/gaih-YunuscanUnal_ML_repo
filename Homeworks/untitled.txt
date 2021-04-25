@@ -1,0 +1,39 @@
+Homework 3
+sklearn.datasets sınıfında "make_classification" fonksiyonunu kullanarak veri kümesi oluşturun. Tek etiket (y) 9 özellik (X) ile 10000 örnek oluşturun. Ayrıca şu parametreleri kullanın:
+n_informative = 4
+class_sep = 2
+random_state = 18
+Ham veriyi inceleyin ve analiz edin.
+Sınıflandırma (classification) için ön işlem yapın.
+Veri kümenizi eğitim ve test alt kümlerine ayırın (eğitim için 0.7 ve test için 0.3 oran olacak şekilde).
+Karar Ağacı ve XGBoost Algoritmasını farklı hiperparametrelerle deneyin. (GridSearchCV kullanabilirisiniz.)
+Sonucunuzu hem eğitim hem de test setinde değerlendirin. Herhangi bir yetersiz uyum (underfitting) veya aşırı uyum (overfitting) sorunu olup olmadığını analiz edin ve yorumlayın.
+In [ ]:
+# Gerekli kitaplıkları içe aktarın.
+In [ ]:
+# Sklearn'de make_classification fonksiyonunu kullanarak veri kümesi oluşturun.
+# Pandas veri çerçevesine dönüştürün.
+In [ ]:
+# Yinelenen satırları ve eksik verileri kontrol edin.
+In [ ]:
+# Her özellik için verileri görselleştirin (pairplot, distplot etc.).
+In [ ]:
+# Korelasyon matrisi çizin.
+In [ ]:
+# Aykırı değerleri işleyin (IsolationForest, Z-score, IQR kullanabilirsiniz)
+In [ ]:
+# Veri kümesini eğitim ve test verisetlerine ayırın.
+In [ ]:
+# Karar Ağacını içe aktarın, farklı hiperparametreleri deneyerek algoritmayı ayarlayın. (hyperpara)
+In [ ]:
+# Öznitelik önemlerini (feature importances) görselleştirin.
+In [ ]:
+# Hata matrisini oluşturun ve accuracy, recall, precision ve f1-score değerlerini hesaplayın.
+In [ ]:
+# XGBoostClassifier'ı içe aktarın, farklı hiperparametreleri deneyerek algoritmayı ayarlayın.
+In [ ]:
+# Öznitelik önemlerini (feature importances) görselleştirin.
+In [ ]:
+# Hata matrisini oluşturun ve accuracy, recall, precision ve f1-score değerlerini hesaplayın.
+In [ ]:
+# Sonucunuzu değerlendirin ve veri setimiz için en iyi performans gösteren algoritmayı seçin.
