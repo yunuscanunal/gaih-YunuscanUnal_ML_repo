@@ -11,13 +11,20 @@
 ## My Project
 This project is for learning and practicing about Machine Learning. This project done for being a one of Top Learner in Global AI Community.
 
-In this project, I used some python libraries...
+This project is about Wine Quality. This dataset include acidity of wines, levels of density of wines or percentage of alcohol level of wines and quality of wines like that. Moreover, this dataset's format is csv format and this dataset is included 1600 row and 12 columns (features).
+
+In this project, I used some python libraries: 
+NumPy
+Pandas
+Matplodlib
+Seaborn
+Sci-kit Learn
 
 ## Requirements
 ```
-Diabets Dataset
+Wİne Quality Dataset
 Some Python Libraries such as Numpy, Pandas, Matplodlib for analyzing
-Some Python Libraries such as Sklearn for modelling
+Some Python Libraries such as Sklearn for modelling and statistic calculation
 
 ```
 ---
