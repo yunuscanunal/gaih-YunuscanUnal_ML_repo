@@ -23,24 +23,16 @@
 
 # # Data
 
-# In[56]:
-
-
 import pandas as pd
 import seaborn as sns
 import numpy as np
 import matplotlib.pyplot as plt
 
 
-# In[57]:
-
-
 # Read csv
 df = pd.read_csv("winequality.csv")
 df
 
-
-# In[58]:
 
 
 # Describe our data for each feature and use .info() for get information about our dataset
@@ -52,21 +44,12 @@ print("Total NA Data: \n", df.isna().sum())
 
 # # Exploratory Data Analysis
 
-# In[59]:
-
-
 # Our label Distribution (countplot)
 sns.countplot(df.quality)
 
 
-# In[60]:
-
-
 # Example EDA (distplot)
 sns.distplot(df["citric acid"])
-
-
-# In[61]:
 
 
 sns.pairplot(df)
@@ -79,20 +62,12 @@ sns.pairplot(df)
 # - Do we need to generate new features?
 # - Split Train and Test dataset. (0.7/0.3)
 
-# In[62]:
-
-
 print("Total Duplicated Data: ", df.duplicated().sum())
-
-
-# In[63]:
 
 
 df = df.drop_duplicates()
 df
 
-
-# In[64]:
 
 
 corr = df.corr()
@@ -100,15 +75,8 @@ corr = df.corr()
 plt.figure(figsize=(15,15))
 sns.heatmap(corr, annot=True, linewidths=.5, cmap="BuPu")
 
-
-# In[65]:
-
-
 df = df.drop(["citric acid","density","pH", "free sulfur dioxide"] ,axis=1).reset_index(drop= True)
 df
-
-
-# In[66]:
 
 
 from scipy import stats
@@ -120,22 +88,14 @@ outliers = list(set(np.where(z>3)[0]))
 new_df = df.drop(outliers, axis=0).reset_index(drop= True)
 
 
-# In[67]:
-
-
 y = pd.DataFrame(new_df["quality"])
 new_df = new_df.drop(columns=["quality"], axis=0)
 
-
-# In[68]:
 
 
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
 X_scaled = StandardScaler().fit_transform(new_df)
 X_scaled
-
-
-# In[70]:
 
 
 from sklearn.model_selection import train_test_split
@@ -151,9 +111,6 @@ X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.3, 
 # - Generate Confusion Matrix and scores of Accuracy, Recall, Precision and F1-Score.
 # - Analyse occurrence of overfitting and underfitting. If there is any of them, try to overcome it within a different section.
 
-# In[153]:
-
-
 from sklearn.tree import DecisionTreeClassifier
 
 clf = DecisionTreeClassifier(max_depth= 3, random_state= 22)
@@ -161,17 +118,10 @@ clf.fit(X_train, y_train)
 print("Accuracy of train: ", clf.score(X_train, y_train))
 print("Accuracy of test: ", clf.score(X_test, y_test))
 
-
-# In[99]:
-
-
 #plt.figure(figsize=(20,20))
 importances = clf.feature_importances_
 sns.barplot(x= importances, y= X_train.columns)
 plt.show()
-
-
-# In[86]:
 
 
 from sklearn.metrics import precision_score, recall_score, accuracy_score, classification_report, f1_score
@@ -197,10 +147,6 @@ ax.set_xlabel('Predicted Labels',fontsize = 15)
 ax.set_ylabel('True Labels',fontsize = 15)
 plt.show()
 
-
-# In[90]:
-
-
 from sklearn.ensemble import RandomForestClassifier
 
 rfc = RandomForestClassifier(max_depth= 3,random_state=22)
@@ -210,16 +156,9 @@ print("Accuracy of train: ", rfc.score(X_train, y_train))
 print("Accuracy of test: ", rfc.score(X_test, y_test))
 
 
-# In[93]:
-
-
 importances = rfc.feature_importances_
 sns.barplot(x= importances, y= X_train.columns)
 plt.show()
-
-
-# In[94]:
-
 
 pred = rfc.predict(X_test)
 print(classification_report(y_test,pred))
@@ -243,9 +182,6 @@ ax.set_ylabel('True Labels',fontsize = 15)
 plt.show()
 
 
-# In[95]:
-
-
 import xgboost as xgb
 from xgboost.sklearn import XGBClassifier
 
@@ -256,15 +192,9 @@ print("Accuracy of train: ", xgc.score(X_train, y_train))
 print("Accuracy of test: ", xgc.score(X_test, y_test))
 
 
-# In[96]:
-
-
 importances = xgc.feature_importances_
 sns.barplot(x= importances, y= X_train.columns)
 plt.show()
-
-
-# In[100]:
 
 
 pred = xgc.predict(X_test)
@@ -289,14 +219,7 @@ ax.set_ylabel('True Labels',fontsize = 15)
 plt.show()
 
 
-# In[106]:
-
-
 clf.set_params()
-
-
-# In[139]:
-
 
 from sklearn.model_selection import GridSearchCV, RandomizedSearchCV
 
@@ -339,9 +262,5 @@ print("Seconds used for refitting the best model on the train dataset: {:.6f}".f
 #  + Daha iyi hyperparams yapılabilir miydi araştırmak ve uygulamak gerekir.
 #  + Daha iyi bir model eğitebilmek için veri setimizi büyütmeyi ve elimizdeki feature selection'ı daha iyi yapmayı denemeliyim.
 #  + Farklı sınıflandırma modelleri deneyerek modellerin başarısını kıyaslamak ve en iyisini bulmak toplam başarımı arttırabilir.
-
-# In[ ]:
-
-
 
 
