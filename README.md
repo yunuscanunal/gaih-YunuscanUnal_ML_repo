@@ -30,6 +30,7 @@ Some Python Libraries such as Sklearn for modelling and statistic calculation
 ```
 ---
 
-### Certification
+### Certifications
+![](img/Introduction to Machine Learning Completion Certificate.png)
 ![](img/TopLearnerCertificate.png)
 
